@@ -1,0 +1,81 @@
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 2rpx solid #777777;  
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+  } 
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: #777777;  
+}  
+.on{ 
+    color: #da7c0c;  
+    border-bottom: 4rpx solid #da7c0c;
+    }
+  
+.swiper-box{ 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    overflow: hidden;
+    text-align: center; 
+  }
+
+.content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+textarea {
+  width: 666rpx;
+  height: 500rpx;
+  border: 2rpx solid #000;
+  padding: 20rpx;
+  text-align: left;
+  font-size: 35rpx;
+}
+
+.result {
+  position: absolute;
+  width: 700rpx;
+  top: 20rpx;
+  padding: 10rpx;
+  font-size: 40rpx;
+  border-radius: 5px;
+  border: 1px solid #DDD;
+  word-wrap: break-word;
+}
+
+.download{
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  justify-content: flex-end;
+  border-bottom: 1px solid #da7c0c;
+}
+
+.footer{
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2rpx solid #da7c0c;
+}
+
+.button_clear{
+  height: 100rpx;
+  border: 0;
+  border-radius: 0;
+}

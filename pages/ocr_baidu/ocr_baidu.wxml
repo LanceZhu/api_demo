@@ -1,0 +1,39 @@
+
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">演示</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">实现</view> 
+</view>  
+
+<view style='margin-top: 4rpx'>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 43}}px" bindchange="bindChange"> 
+    <swiper-item>
+      <view class='content' style="height:{{winHeight - 93}}px">
+        <view class='image_preview'> <image wx:if='{{image_path}}' src='{{image_path}}' mode='aspectFit'></image></view>
+        <view wx:if="{{info_display}}">
+          <view wx:for='{{info.words_result}}' wx:key='resultList'>
+            <view class='result' bindlongpress='longPress' data-text='{{item.words}}'>{{item.words}}</view>
+          </view>
+        </view>
+        <view class='tip' wx:if="{{info_display}}">长按复制</view>
+      </view>
+      <view class='footer'>
+        <view class='choice_left' bindtap='chooseImageFromAlbum'>
+          <button class='button_clear'> 相册 </button>
+        </view>
+        <view class='choice_right' bindtap='chooseImageFromCamera'>
+          <button class='button_clear'> 拍照 </button>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y style='height:{{winHeight-93}}px'>
+        <view class='content' style="height:{{winHeight - 93}}px">
+          <view class='result' wx:if='{{info_display}}'>orc_baidu</view>
+        </view>
+      </scroll-view>
+      <view class='footer'>
+        <button open-type='share' style='height:100%; width:100%'>分享</button>
+      </view>
+    </swiper-item>
+</swiper>
+</view>

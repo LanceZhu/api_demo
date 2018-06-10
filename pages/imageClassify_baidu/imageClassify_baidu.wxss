@@ -1,0 +1,83 @@
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 2rpx solid #777777;  
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+  } 
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: #777777;  
+}  
+.on{ 
+    color: #da7c0c;  
+    border-bottom: 4rpx solid #da7c0c;
+    }
+  
+.swiper-box{ 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    overflow: hidden;
+    text-align: center; 
+  }
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image_preview{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 750rpx;
+  height: 50%;
+  border-bottom:2rpx solid #777777;
+  padding: 10rpx;
+}
+
+.result {
+  width: 700rpx;
+  margin-top: 20rpx;
+  padding: 10rpx;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #DDD;
+  word-wrap: break-word;
+}
+
+.footer{
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2rpx solid #da7c0c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choice_left{
+  width: 375rpx;
+  background: rgb(248, 248, 248);
+}
+
+.choice_right{
+  width: 374rpx;
+  border-left: 1px solid #da7c0c;
+  background: rgb(248, 248, 248);
+}
+
+.button_clear{
+  height: 100rpx;
+  width: 100%;
+}

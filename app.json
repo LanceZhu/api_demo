@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/category/category",
+    "pages/weather/weather",
+    "pages/fanyi_youdao/fanyi_youdao",
+    "pages/tutorial/tutorial",
+    "pages/list/list",
+    "pages/speech_baidu/speech_baidu",
+    "pages/test/test",
+    "pages/imageClassify_baidu/imageClassify_baidu",
+    "pages/demo/demo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "rgb(248,248,248)",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "API Demo",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}

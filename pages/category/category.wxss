@@ -1,0 +1,47 @@
+/* pages/test/test.wxss */
+
+.device{
+  background: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  width:100%;
+  height: 200rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.content{
+  background: rgb(248, 248, 248);
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap:wrap;
+}
+
+.box{
+  width:300rpx;
+  height: 400rpx;
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff; 
+}
+
+.box_image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.box_title{
+    display: block;
+}

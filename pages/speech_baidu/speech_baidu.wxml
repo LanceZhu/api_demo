@@ -1,0 +1,31 @@
+
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">演示</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">实现</view> 
+</view>  
+
+<view style='margin-top: 4rpx'>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 43}}px" bindchange="bindChange"> 
+    <swiper-item>
+      <view class='content' style="height:{{winHeight - 93}}px">
+        <textarea placeholder='请输入需要转换的文字（最多50字）' bindblur='bindTextAreaBlur'></textarea>  
+        <view class='download' wx:if='{{info_display}}' bindtap='download'> 下载 </view>
+      </view>
+      <view class='footer'>
+        <view class='choice_left' bindtap='submit'>
+          <button class='button_clear'> 转换 </button>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y style='height:{{winHeight-93}}px'>
+        <view class='content' style="height:{{winHeight - 93}}px">
+          <view class='result' wx:if='{{info_display}}'>百度语音合成</view>
+        </view>
+      </scroll-view>
+      <view class='footer'>
+        <button open-type='share' class='button_clear'>分享</button>
+      </view>
+    </swiper-item>
+</swiper>
+</view>

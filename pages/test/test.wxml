@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<view class='test' bindtap='tap'>asdkljlkkk</view>
+<view class='test' bindlongpress='longtap'>asdkljlkkk</view>

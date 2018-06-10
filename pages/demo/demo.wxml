@@ -1,0 +1,9 @@
+<!--pages/demo/demo.wxml-->
+<view class='device'>
+  <view class='content'>
+    <scroll-view scroll-y style='height:90%'>
+      {{info}}
+      <button bindtap='submit'>查看</button>
+    </scroll-view>
+  </view>
+</view>

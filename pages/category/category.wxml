@@ -1,0 +1,15 @@
+<view class='device'>
+  <view class='header'>
+    <image src='/images/icons/banner.png' mode='aspectFit' class='header'></image>
+  </view>
+  <view>
+  <scroll-view scroll-y style="height:{{winHeight - 100}}px" bindscrolltolower='scrollToLower'>
+  <view class='content'>
+    <view wx:for="{{categories}}" wx:key="categories" class='box' bindtap='jumpToList' data-category-name="{{item.name}}">
+      <image src='/images/icons/{{item.name}}.png' class='box_image'></image>
+      <view class='box_title'>{{item.name}}</view>
+    </view>
+  </view>
+  </scroll-view>
+  </view>
+</view>
