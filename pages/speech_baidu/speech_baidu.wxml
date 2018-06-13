@@ -8,7 +8,26 @@
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 43}}px" bindchange="bindChange"> 
     <swiper-item>
       <view class='content' style="height:{{winHeight - 93}}px">
-        <textarea placeholder='请输入需要转换的文字（最多50字）' bindblur='bindTextAreaBlur'></textarea>  
+        <textarea placeholder='请输入需要转换的文字（最多50字）' bindblur='bindTextAreaBlur'></textarea> 
+        <view>
+            <view class='setting_desc'>设置</view>
+            <radio-group bindchange='checkboxChange' class='setting'>
+              <view wx:for='{{perList}}' wx:key='perList'>
+                <label>
+                  <view class='per' style="background-color:{{item.checked ? '#efefef':'#fff'}}" bindtap='per' data-per='{{item.per}}'>
+                    <radio hidden value="{{item.title}}" checked="{{item.checked}}"></radio>
+                    {{item.title}}
+                  </view>
+                </label>
+              </view>
+            </radio-group>
+        </view>
+        <view class='setting spd'>
+          语速：<slider min='1' max='9' step='1' value='5' block-size='20' show-value bindchange='spd'></slider>
+        </view>
+        <view class='setting spd'>
+          音调：<slider min='1' max='9' step='1' value='5' block-size='20' show-value bindchange='pit'></slider>
+        </view>
         <view class='download' wx:if='{{info_display}}' bindtap='download'> 下载 </view>
       </view>
       <view class='footer'>

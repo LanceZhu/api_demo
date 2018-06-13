@@ -8,11 +8,19 @@ Page({
     image_path: '',
     info: {},
     info_display: 0,
+    plus_display: 1,
     text: ''
   },
 
+  /**
+   * 从相册选取图片
+   */
   chooseImageFromAlbum: function () {
     var that = this;
+
+    that.setData({
+      plus_display: 0
+    });
 
     wx.chooseImage({
       count: 1,
@@ -44,11 +52,25 @@ Page({
         })
          */
       },
+      fail: function(){
+        console.log('没有选择图片')
+        that.setData({
+          plus_display: 1
+        });
+      },
     });
   },
 
+  /**
+   * 相机拍摄图片
+   */
   chooseImageFromCamera: function () {
     var that = this;
+
+    that.setData({
+      plus_display: 0
+    });
+
     wx.chooseImage({
       count: 1,
       sourceType: ['camera'],
@@ -78,6 +100,13 @@ Page({
           urls: [tempFilePaths[0]]
         })
          */
+      },
+      fail: function () {
+        console.log('没有选择图片')
+        that.setData({
+          plus_display: 1,
+          info_display: 0
+        });
       },
     });
   },
@@ -117,6 +146,9 @@ Page({
     }
   },
 
+  /**
+   * 生命周期函数--页面渲染前调用
+   */
   onLoad: function (options) {
     let that = this;
 

@@ -11,6 +11,9 @@ Page({
     text: ''
   },
 
+  /**
+   * 长按复制到剪切板
+   */
   longPress: function (e) {
     console.log(e);
     wx.setClipboardData({
@@ -21,6 +24,9 @@ Page({
     })
   },
 
+  /**
+   * textarea 失去焦点 获取输入内容
+   */
   bindTextAreaBlur: function (e) {
     console.log(e.detail.value);
     this.setData({
@@ -28,6 +34,7 @@ Page({
     })
   },
 
+  //提交 用于天气查询
   submit: function (e) {
     console.log(this.data.text);
     var that = this;
@@ -54,8 +61,8 @@ Page({
   },
 
   /** 
-       * 滑动切换tab 
-       */
+  * 滑动切换tab 
+  */
   bindChange: function (e) {
 
     var that = this;

@@ -7,9 +7,76 @@ Page({
     currentTab: 0,
     info: [],
     text: '',
-    info_display: 0
+    info_display: 0,
+    //发音人选择，0：普通女生，1：普通男生，3：度逍遥，4：度丫丫
+    per: '0',
+    //语速 取值0-9 默认5为中语速
+    spd: '5',
+    //音调 取值0-9 默认5为中音调
+    pit: '5',
+    //音量 取值0-9 默认5为中音量 
+    vol: '5',
+    perList: [
+      { title: "女声", checked: true, per: '0' },
+      { title: "男声", checked: false, per: '1' },
+      { title: "度逍遥", checked: false, per: '3' },
+      { title: "度丫丫", checked: false, per: '4' },
+    ]
   },
 
+  /**
+   * 检测多选框变化 用于检测 朗读人参数 per 的修改
+   */
+  checkboxChange: function(e){
+    console.log(e);;
+    var values = e.detail.value;
+    var items = this.data.perList;
+    /**
+    console.log('values:');
+    console.log(values);
+    console.log('items:');
+    console.log(items);
+     */
+    
+    for(var i=0; i<items.length; i++){
+      items[i].checked = false;
+      if(values == items[i].title){
+        console.log(values);
+        items[i].checked = true;
+        console.log(i);
+      }
+    };
+
+    this.setData({
+      perList: items
+    });
+  },
+
+  per: function(e){
+    console.log('tsaert');
+    console.log(e.currentTarget.dataset.per);
+    this.setData({
+      per: e.currentTarget.dataset.per
+    });
+  },
+
+  spd: function(e){
+    console.log(e.detail.value);
+    this.setData({
+      spd: e.detail.value
+    })
+  },
+
+  pit: function (e) {
+    console.log(e.detail.value);
+    this.setData({
+      pit: e.detail.value
+    })
+  },
+
+  /**
+   * 下载语音合成函数
+   */
   download: function(e){
     var that = this;
     console.log(this.innerAudioContext.src);
@@ -31,6 +98,9 @@ Page({
     })
   },
   
+  /**
+   * textarea 失去焦点 获得输入内容
+   */
   bindTextAreaBlur: function (e) {
     console.log(e.detail.value);
     this.setData({
@@ -38,9 +108,12 @@ Page({
     })
   },
 
+  //提交 语音合成
   submit: function(e){
     console.log(this.data.text);
     var that = this;
+
+    console.log(that.data.per);
 
     that.innerAudioContext = wx.createInnerAudioContext();
     that.innerAudioContext.autoplay = true;
@@ -49,10 +122,10 @@ Page({
       url: 'http://localhost:3000/speech_baidu/speech',
       data: {
         text: this.data.text,
-        spd: '6',
-        pit: '3',
-        vol: '8',
-        per: '0'
+        spd: this.data.spd,
+        pit: this.data.pit,
+        vol: this.data.pit,
+        per: this.data.per
       },
       method: 'POST',
       success(res) {
@@ -130,8 +203,8 @@ Page({
    */
 
   /** 
-       * 滑动切换tab 
-       */
+  * 滑动切换tab 
+  */
   bindChange: function (e) {
 
     var that = this;

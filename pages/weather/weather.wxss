@@ -47,7 +47,7 @@ textarea {
   padding: 10rpx;
   font-size: 14px;
   border-radius: 5px;
-  border: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
   word-wrap: break-word;
 }
 

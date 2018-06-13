@@ -4,7 +4,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     list: [],
-    header_image: ''
+    header_image: '',
+    header_image_display: 0
   },
   
   /**
@@ -30,8 +31,13 @@ Page({
   onLoad: function (options) {
     var that = this;
 
+    wx.showLoading({
+      title: '拼命加载中...',
+    });
+
     that.setData({
-      header_image: options.categoryName
+      header_image: options.categoryName,
+      header_image_display: 1
     }),
 
     console.log(that.data.header_image);
@@ -76,6 +82,8 @@ Page({
       }
     })
     
+    wx.hideLoading();
+
   },
 
   /**

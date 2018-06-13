@@ -19,6 +19,9 @@ Page({
     })
   },
 
+  /**
+   * 向下滑动加载更多
+   */
   scrollToLower: function(){
     var that = this;
     console.log('加载更多');

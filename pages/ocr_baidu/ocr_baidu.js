@@ -8,9 +8,13 @@ Page({
     image_path: '',
     info: {},
     info_display: 0,
+    plus_display: 1,
     text: ''
   },
 
+  /**
+   * 长按复制到剪切版
+   */
   longPress: function(e){
     console.log(e);
     wx.setClipboardData({
@@ -21,8 +25,15 @@ Page({
     })
   },
 
+  /**
+   * 从相册选取图片
+   */
   chooseImageFromAlbum: function(){
     var that = this;
+
+    that.setData({
+      plus_display: 0
+    });
 
     wx.chooseImage({
       count: 1,
@@ -45,7 +56,7 @@ Page({
               info_display: 1
             }),
             console.log(that.data.info.words_result);
-          }
+          },
         });
 
         /**
@@ -54,11 +65,26 @@ Page({
         })
          */
       },
+      fail: function () {
+        console.log('没有选择图片')
+        that.setData({
+          plus_display: 1,
+          info_display: 0
+        });
+      },
     });
   },
 
+  /**
+   * 从相机选取图片
+   */
   chooseImageFromCamera: function () {
     var that = this;
+
+    that.setData({
+      plus_display: 0
+    });
+
     wx.chooseImage({
       count: 1,
       sourceType: ['camera'],
@@ -89,12 +115,19 @@ Page({
         })
          */
       },
+      fail: function () {
+        console.log('没有选择图片')
+        that.setData({
+          plus_display: 1,
+          info_display: 0
+        });
+      },
     });
   },
 
   /** 
-       * 滑动切换tab 
-       */
+  * 滑动切换tab 
+  */
   bindChange: function (e) {
 
     var that = this;

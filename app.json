@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/category/category",
-    "pages/weather/weather",
     "pages/fanyi_youdao/fanyi_youdao",
+    "pages/speech_baidu/speech_baidu",
+    "pages/ocr_baidu/ocr_baidu",
+    "pages/weather/weather",
     "pages/tutorial/tutorial",
     "pages/list/list",
-    "pages/speech_baidu/speech_baidu",
     "pages/test/test",
     "pages/imageClassify_baidu/imageClassify_baidu",
     "pages/demo/demo"

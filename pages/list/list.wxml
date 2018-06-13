@@ -2,7 +2,7 @@
 
 <view class='device'>
   <view class='header'>
-    <image src='/images/icons/{{header_image}}.png' class='header_image'></image>
+    <image src='/images/icons/{{header_image}}.png' class='header_image' wx:if='{{header_image_display}}'></image>
     <view class='header_title'>{{header_image}}</view>
   </view>
 
